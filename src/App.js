@@ -11,7 +11,7 @@ import {
 import Home from './Home';
 import SearchPane from './SearchPane';
 import PodcastPane from './PodcastPane';
-import About from './About';
+
 import Player from './Player';
 
 
@@ -28,9 +28,6 @@ function App(props) {
 			<div className="App">
 				<Header />
 				<Switch>
-					<Route path="/about">
-						<About />
-					</Route>
 					<Route path="/podcast/:podcastId">
 						<PodcastPane playEpisode={playEpisode} />
 					</Route>
