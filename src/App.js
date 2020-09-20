@@ -38,10 +38,10 @@ function App(props) {
 						<Home />
 					</Route>
 				</Switch>
-				{ playingEpisode && 
-					<Player playingEpisode={playingEpisode} />
-				}
 			</div>
+			{ playingEpisode && 
+				<Player playingEpisode={playingEpisode} />
+			}
 		</Router>
 	);
 }
