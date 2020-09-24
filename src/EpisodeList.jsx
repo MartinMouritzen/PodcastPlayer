@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from 'react';
 
 
 function EpisodeList({ playEpisode, episodes }) {
+	const stripTags = (content) => {
+		return content.replace(/<[^>]*>?/gm, '');
+	}
+
 	return (
 		<>
 			<div className="episodesHeader">
@@ -14,7 +18,7 @@ function EpisodeList({ playEpisode, episodes }) {
 						<div className="playIcon" onClick={() => { playEpisode(episode); }}>▶</div>
 						<div className="episodeInfo">
 							<div className="title">{episode.title} <span>{date.toLocaleDateString("en-US")}</span></div>
-							<div className="description">{episode.description}</div>
+							<div className="description">{stripTags(episode.description)}</div>
 						</div>
 					</div>
 				);
