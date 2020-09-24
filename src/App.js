@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Header from './Header';
 
 import {
-	BrowserRouter as Router,
+	HashRouter as Router,
 	Switch,
 	Route
 } from "react-router-dom";
