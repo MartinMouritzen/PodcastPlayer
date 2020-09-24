@@ -1,3 +1,6 @@
+/****************************************
+* Common
+****************************************/
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -10,15 +13,14 @@ body {
 }
 .home {
 	padding: 20px;
+}
+.homeText {
 	max-width: 800px;
 }
 .header {
 	background-color: #015fca;
 	padding: 20px;
 	display: flex;
-}
-.searchPane {
-	padding: 20px;
 }
 .loading {
 	text-align: center;
@@ -28,7 +30,16 @@ body {
 	width: 160px;
 	height: 160px;
 	margin-top: 60px;
-
+}
+.loadingIndicatorMedium {
+	width: 80px;
+	height: 80px;
+}
+/****************************************
+* Search screen
+****************************************/
+.searchPane {
+	padding: 20px;
 }
 .searchResult {
 	float: left;
@@ -63,7 +74,9 @@ body {
 	white-space: nowrap;
 	color: #666666;
 }
-
+/****************************************
+* Podcast screen
+****************************************/
 .podcast {
 	
 }
@@ -106,8 +119,9 @@ body {
 .episode .playIcon {
 	background-color: #0176e5;
 	border-radius: 50%;
-	width: 50px;
+	width: 44px;
 	height: 50px;
+	padding-left: 6px;
 	font-size: 30px;
 	color: #FFFFFF;
 	display: flex;
@@ -128,7 +142,9 @@ body {
 .episode .description {
 	color: #666666;
 }
-
+/****************************************
+* Player
+****************************************/
 .player {
 	transform: translate3d(0,0,0);
 	position: fixed;
@@ -171,8 +187,41 @@ body {
 .player .podcastInfo {
 	color: #FFFFFF;
 }
+/****************************************
+* Podcast lists
+****************************************/
+.podcastList {
+	
+}
+.podcastList .podcast {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 
-
+	float: left;
+	width: 200px;
+	height: 250px;
+	background-color: #FFFFFF;
+	box-shadow: 10px 10px 33px -9px rgba(0,0,0,0.36);
+	margin-right: 20px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	text-decoration: none;
+}
+.podcastList img {
+	width: 200px;
+	height: 200px;
+}
+.podcastList .podcastListInfo {
+	padding: 10px;
+	width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/****************************************
+* Responsiveness
+****************************************/
 @media only screen and (max-width: 600px) {
 	.searchResult {
 	  width: 90%;
@@ -207,4 +256,4 @@ body {
 		width: 10vw;
 		height: auto;
 	}
-  }
+}

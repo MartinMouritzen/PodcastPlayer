@@ -29,6 +29,19 @@ class PodcastService {
 		return await searchResponse.json();
 	}
 	/**
+	* Search for a podcast
+	*/
+	static async retrieveLastUpdatedPodcasts() {
+		var authHeaders = await this.getAuthHeaders();
+
+		var latestUrl = searchHost + 'recent/episodes';
+
+		var latestResponse = await fetch(latestUrl,{
+			headers: authHeaders
+		});
+		return await latestResponse.json();
+	}
+	/**
 	* Look up info about a podcast
 	*/
 	static async lookUp(podcastId) {

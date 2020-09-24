@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import LoadingIndicator from './resources/loading.svg';
 
 import PodcastService from './PodcastService';
+import EpisodeList from './EpisodeList';
 
 function PodcastPane(props) {
 	let { podcastId } = useParams();
@@ -21,7 +22,6 @@ function PodcastPane(props) {
 
 		PodcastService.retrieveEpisodes(podcastId)
 		.then((episodes) => {
-			console.log(episodes);
 			setEpisodes(episodes);
 		});
 	},[podcastId]);
@@ -49,24 +49,7 @@ function PodcastPane(props) {
 			}
 
 			{ episodes !== false &&
-				<>
-					<div className="episodesHeader">
-						Episodes
-					</div>
-					{ episodes.items.map((episode,index) => {
-						var date = new Date(episode.datePublished * 1000);
-						return (
-							<div key={episode.id} className="episode" onClick={() => { props.playEpisode(episode); }}>
-								<div className="playIcon">▶</div>
-								<div className="episodeInfo">
-									<div className="title">{episode.title} <span>{date.toLocaleDateString("en-US")}</span></div>
-									<div className="description">{episode.description}</div>
-								</div>
-							</div>
-						);
-					}) }
-				</>
-				
+				<EpisodeList playEpisode={props.playEpisode} episodes={episodes} />
 			}
 		</div>
 	);
