@@ -12,7 +12,7 @@ function Player(props) {
 
 	return (
 		<div className="player">
-			<img src={props.playingEpisode.feedImage} />
+			<img src={props.playingEpisode.feedImage} alt={props.playingEpisode.title + ' thumbnail'} />
 			<div className="podcastInfo">
 			<div className="title">
 					{props.playingEpisode.title}

@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import LoadingIndicator from './resources/loading.svg';
 
 import PodcastService from './PodcastService';
+import KnowledgeGraph from './KnowledgeGraph';
 import EpisodeList from './EpisodeList';
 
 function PodcastPane(props) {
@@ -38,18 +39,26 @@ function PodcastPane(props) {
 				</div>
 			}
 			{ podcastInfo !== false &&
-				<div className="podcastInfo">
-					<img src={podcastInfo.feed.artwork} alt={podcastInfo.feed.title + ' artwork'} />
-					<div className="podcastCoreInfo">
-						<h1>{podcastInfo.feed.title}</h1>
-						<h2>{podcastInfo.feed.author}</h2>
-						<p>{podcastInfo.feed.description}</p>
+				<>
+					<div className="podcastInner">
+						<div className="podcastInfo">
+							<img src={podcastInfo.feed.artwork} alt={podcastInfo.feed.title + ' artwork'} />
+							<div className="podcastCoreInfo">
+								<h1>{podcastInfo.feed.title}</h1>
+								<h2>{podcastInfo.feed.author}</h2>
+								<p>{podcastInfo.feed.description}</p>
+							</div>
+						</div>
+						<div className="podcastContent">
+							{ episodes !== false &&
+								<EpisodeList playEpisode={props.playEpisode} episodes={episodes} />
+							}
+						</div>
 					</div>
-				</div>
-			}
-
-			{ episodes !== false &&
-				<EpisodeList playEpisode={props.playEpisode} episodes={episodes} />
+					{ podcastInfo !== false &&
+						<KnowledgeGraph podcast={podcastInfo} />
+					}
+				</>
 			}
 		</div>
 	);

@@ -20,11 +20,11 @@ function SearchPane(props) {
 	},[searchQuery]);
 
 	return (
-		<div class="searchPane">
+		<div className="searchPane">
 			<h1>Searching for &quot;{searchQuery}&quot;</h1>
 
 			{ searchResults === false &&
-				<div class="loading">
+				<div className="loading">
 					<div>
 						Loading search results
 					</div>
@@ -40,11 +40,11 @@ function SearchPane(props) {
 			{ searchResults !== false && searchResults.count > 0 &&
 				searchResults.feeds.map((searchResult,index) => {
 					return (
-						<Link to={'/podcast/' + searchResult.id} class="searchResult">
+						<Link to={'/podcast/' + searchResult.id} className="searchResult" key={searchResult.id}>
 							<img src={searchResult.artwork} alt={searchResult.title + ' artwork'} />
 
-							<div class="title">{searchResult.title}</div>
-							<div class="author">{searchResult.author}</div>
+							<div className="title">{searchResult.title}</div>
+							<div className="author">{searchResult.author}</div>
 						</Link>
 					);
 				})

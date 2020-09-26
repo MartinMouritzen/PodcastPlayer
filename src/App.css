@@ -21,8 +21,11 @@ body {
 	background-color: #015fca;
 	padding: 20px;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .loading {
+	flex: 1;
 	text-align: center;
 	font-size: 24px;
 }
@@ -78,7 +81,8 @@ body {
 * Podcast screen
 ****************************************/
 .podcast {
-	
+	display: flex;
+	flex-direction: row;
 }
 .podcast h1 {
 	margin: 0px;
@@ -105,7 +109,19 @@ body {
 	margin-right: 20px;
 	border-radius: 10px;
 }
-.episodesHeader {
+.podcastContent {
+	display: flex;
+}
+.podcastInner {
+	flex: 1;
+}
+/**********************
+* Episodes
+**********************/
+.episodeContainer {
+	flex: 1;
+}
+.episodesHeader, .sideBarHeader {
 	background-color: #DDDDDD;
 	border-top: 1px solid #333333;
 	border-bottom: 1px solid #333333;
@@ -113,7 +129,6 @@ body {
 }
 .episode {
 	padding: 20px;
-	border-bottom: 1px solid #666666;
 	display: flex;
 }
 .episode .playIcon {
@@ -141,6 +156,31 @@ body {
 }
 .episode .description {
 	color: #666666;
+}
+/**********************
+* Knowledge Graph
+**********************/
+.knowledgeGraph {
+	width: 300px;
+	background-color: #EEEEEE;
+	box-shadow: 10px 10px 33px -9px rgba(0,0,0,0.36);
+	border-radius: 10px;
+}
+.knowledgeGraphContent {
+
+}
+.knowledgeGraphContent .knowledgeItem .title {
+	font-weight: bold;
+	padding: 20px;
+	padding-bottom: 0px;
+}
+.knowledgeGraphContent .knowledgeItem .body {
+	padding: 20px;
+	padding-top: 10px;
+}
+.knowledgeGraphContent .knowledgeItem .image img {
+	width: 100%;
+	height: auto;
 }
 /****************************************
 * Player

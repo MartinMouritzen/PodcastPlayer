@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ function PodcastList({ podcasts }) {
 						Loading search results
 					</div>
 
-					<img src={LoadingIndicator} class="loadingIndicatorMedium" alt="Loading indicator" />
+					<img src={LoadingIndicator} className="loadingIndicatorMedium" alt="Loading indicator" />
 				</div>
 			}
 			{ podcasts !== false &&
