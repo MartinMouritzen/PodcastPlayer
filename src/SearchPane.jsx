@@ -12,6 +12,7 @@ function SearchPane(props) {
 	const [searchResults, setSearchResults] = useState(false);
 
 	useEffect(() => {
+		window.document.title = 'Search results for "' + searchQuery + '" - Podfriend light';
 		setSearchResults(false);
 		PodcastService.search(searchQuery)
 		.then((returnedSearchResults) => {

@@ -103,7 +103,7 @@ body {
 .podcastCoreInfo {
 	max-width: 700px;
 }
-.podcastInfo img {
+.podcastInfo .cover {
 	width: 400px;
 	height: 400px;
 	margin-right: 20px;
@@ -114,6 +114,20 @@ body {
 }
 .podcastInner {
 	flex: 1;
+}
+.shareButtons {
+	display: flex;
+}
+.shareButtons .clipBoardButton {
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 30px;
+	color: #FFFFFF;
+	display: inline-block;
+	height: 30px;
+	background-color: #00192f;
+	text-shadow: 1px 1px #000000;
+	cursor: pointer;
 }
 /**********************
 * Episodes
@@ -285,7 +299,7 @@ body {
 		display: block;
 		padding: 0px;
 	}
-	.podcast .podcastInfo img {
+	.podcast .podcastInfo .cover {
 		width: 100%;
 		height: auto;
 		border-radius: 0px;

@@ -30,12 +30,12 @@ function Home(props) {
 				</p>
 				<p>
 					<b>Great ideas for the future:</b>
-					<ul>
-						<li>Use localStorage for favorites</li>
-						<li>A lot of error handling</li>
-						<li>... and so much more.</li>
-					</ul>
 				</p>
+				<ul>
+					<li>Use localStorage for favorites</li>
+					<li>A lot of error handling</li>
+					<li>... and so much more.</li>
+				</ul>
 				<p>
 					<a href="https://github.com/MartinMouritzen/PodcastPlayer">Github Repo</a>
 				</p>

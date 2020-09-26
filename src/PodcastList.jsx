@@ -8,7 +8,7 @@ function PodcastList({ podcasts }) {
 	return (
 		<div className="podcastList">
 			{ podcasts === false &&
-				<div class="loading">
+				<div className="loading">
 					<div>
 						Loading search results
 					</div>
@@ -19,7 +19,7 @@ function PodcastList({ podcasts }) {
 			{ podcasts !== false &&
 				podcasts.items.map((podcast,index) => {
 					return (
-						<Link to={'/podcast/' + podcast.feedId} class="podcast">
+						<Link to={'/podcast/' + podcast.feedId} className="podcast" key={podcast.feedId}>
 							<img src={podcast.image ? podcast.image : podcast.feedImage} alt={podcast.title + ' artwork'} />
 
 							<div className="podcastListInfo">

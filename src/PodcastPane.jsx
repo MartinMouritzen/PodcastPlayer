@@ -7,6 +7,7 @@ import LoadingIndicator from './resources/loading.svg';
 import PodcastService from './PodcastService';
 import KnowledgeGraph from './KnowledgeGraph';
 import EpisodeList from './EpisodeList';
+import ShareButtons from './ShareButtons';
 
 function PodcastPane(props) {
 	let { podcastId } = useParams();
@@ -18,6 +19,7 @@ function PodcastPane(props) {
 		setPodcastInfo(false);
 		PodcastService.lookUp(podcastId)
 		.then((podcastInfo) => {
+			window.document.title = podcastInfo.feed.title + ' - Podfriend light';
 			setPodcastInfo(podcastInfo);
 		});
 
@@ -42,11 +44,12 @@ function PodcastPane(props) {
 				<>
 					<div className="podcastInner">
 						<div className="podcastInfo">
-							<img src={podcastInfo.feed.artwork} alt={podcastInfo.feed.title + ' artwork'} />
+							<img src={podcastInfo.feed.artwork} alt={podcastInfo.feed.title + ' artwork'} className="cover" />
 							<div className="podcastCoreInfo">
 								<h1>{podcastInfo.feed.title}</h1>
 								<h2>{podcastInfo.feed.author}</h2>
 								<p>{podcastInfo.feed.description}</p>
+								<ShareButtons podcastTitle={podcastInfo.feed.title} podcastId={podcastId} />
 							</div>
 						</div>
 						<div className="podcastContent">
