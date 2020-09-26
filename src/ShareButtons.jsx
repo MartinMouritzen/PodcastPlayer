@@ -6,8 +6,8 @@ import ShareT from './resources/share-t.jpg';
 function ShareButtons({ podcastTitle, podcastId }) {
 	const shareTitle = 'Check out this podcast: ' + podcastTitle;
 	const shareTitleEncoded = encodeURI(shareTitle);
-	const shareURL = encodeURI('https://www.podfriend.com/simpleplayer/test/') + '#' + encodeURI('/podcast/') + podcastId;
-	const shareURLEncoded = encodeURI('https://www.podfriend.com/simpleplayer/test/') + '%23' + encodeURI('/podcast/') + podcastId;
+	const shareURL = encodeURI('https://www.podfriend.com/simpleplayer/') + '#' + encodeURI('/podcast/') + podcastId;
+	const shareURLEncoded = encodeURI('https://www.podfriend.com/simpleplayer/') + '%23' + encodeURI('/podcast/') + podcastId;
 
 	const copyToClipBoard = () => {
 		var dummy = document.createElement("textarea");
