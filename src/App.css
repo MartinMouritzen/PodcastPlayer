@@ -278,6 +278,9 @@ body {
 	.searchResult .author {
 		
 	}
+	.podcast {
+		display: block;
+	}
 	.podcast .podcastInfo {
 		display: block;
 		padding: 0px;
@@ -285,6 +288,7 @@ body {
 	.podcast .podcastInfo img {
 		width: 100%;
 		height: auto;
+		border-radius: 0px;
 	}
 	.podcastCoreInfo {
 		padding: 20px;
@@ -295,5 +299,8 @@ body {
 	.player img {
 		width: 10vw;
 		height: auto;
+	}
+	.knowledgeGraph {
+		width: auto;
 	}
 }
