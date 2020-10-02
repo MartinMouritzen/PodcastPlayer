@@ -42,7 +42,7 @@ function SearchPane(props) {
 				searchResults.feeds.map((searchResult,index) => {
 					return (
 						<Link to={'/podcast/' + searchResult.id} className="searchResult" key={searchResult.id}>
-							<img src={searchResult.artwork} alt={searchResult.title + ' artwork'} />
+							<img src={searchResult.artwork ? searchResult.artwork : searchResult.image} alt={searchResult.title + ' artwork'} />
 
 							<div className="title">{searchResult.title}</div>
 							<div className="author">{searchResult.author}</div>

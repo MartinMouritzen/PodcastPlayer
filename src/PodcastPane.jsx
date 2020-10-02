@@ -44,7 +44,7 @@ function PodcastPane(props) {
 				<>
 					<div className="podcastInner">
 						<div className="podcastInfo">
-							<img src={podcastInfo.feed.artwork} alt={podcastInfo.feed.title + ' artwork'} className="cover" />
+							<img src={podcastInfo.feed.artwork ? podcastInfo.feed.artwork : podcastInfo.feed.image} alt={podcastInfo.feed.title + ' artwork'} className="cover" />
 							<div className="podcastCoreInfo">
 								<h1>{podcastInfo.feed.title}</h1>
 								<h2>{podcastInfo.feed.author}</h2>
